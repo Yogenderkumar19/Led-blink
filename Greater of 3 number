@@ -1,0 +1,17 @@
+void setup() {
+int a,b,c; 
+Serial.begin(9600);
+  a=100; b=15; c=20; 
+  if (a>b) {
+  if (a>c)
+  {Serial.print("a is greater");
+  }}
+  else {
+    if (b>c) {
+    Serial.print("b is greater");}
+    else {
+    Serial.print("c is greater");}}}
+
+void loop() {
+
+}
