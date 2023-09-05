@@ -1,0 +1,26 @@
+void setup() {
+  Serial.begin(9600);
+  int a=10; int b=15; int c=a+b;
+  Serial.print("Sum is ");
+Serial.print(c);
+
+}
+
+void loop() {
+
+}
+
+// Or
+
+void setup() {
+int a,b,c; 
+Serial.begin(9600);
+  a=10; b=15; c=a+b;
+  Serial.print("Sum is ");
+Serial.print(c);
+
+}
+
+void loop() {
+
+}
