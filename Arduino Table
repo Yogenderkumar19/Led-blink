@@ -1,0 +1,16 @@
+void setup() {
+int a,i; 
+Serial.begin(9600);
+  a=2; 
+  for (i=1; i<=10; i=i+1)
+  {Serial.print(a);
+  Serial.print("*");
+  Serial.print(i);
+  Serial.print("=");
+  Serial.print(a*i);
+  Serial.println(" ");
+  }}
+
+void loop() {
+
+}
