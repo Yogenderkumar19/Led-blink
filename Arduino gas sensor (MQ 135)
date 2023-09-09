@@ -28,3 +28,4 @@ if (sensorValue>200)
 }
 delay(500);
 }
+// BUZZER Pin GND, Pin = 3
