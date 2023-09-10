@@ -17,3 +17,26 @@ void loop() {
   lcd.setCursor(0,1); lcd.print("THuMID: "); lcd.print(h); 
   
  }
+
+// Other method
+
+#include <DHT.h>
+#include <LiquidCrystal_I2C.h>
+DHT dht(2, DHT22);
+LiquidCrystal_I2C lcd(0x27,16,2);
+
+void setup() {
+  Serial.begin(9600);
+  dht.begin();
+  lcd.init();  
+  lcd.backlight(); 
+}
+
+void loop() {
+  int h = dht.readHumidity();
+  float t = dht.readTemperature();
+ lcd.setCursor(0,0); lcd.print("TEMP: "); lcd.print(t); 
+ lcd.setCursor(0,1); lcd.print("HUMIDITY: "); lcd.print(h); 
+  Serial.println(t); Serial.println(h);
+  delay(1000);
+ }
