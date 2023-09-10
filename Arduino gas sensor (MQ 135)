@@ -11,21 +11,32 @@ delay(500);
 
 // Gas sensor with buzzer
 
-#define BUZZER 3
+int Value;
 
-void setup() {
-pinMode(BUZZER, OUTPUT);
- Serial.begin(9600);
+void setup()
+{
+  pinMode(9, OUTPUT);
+   pinMode(A0, INPUT_PULLUP);
+  Serial.begin(9600);
+}
+void loop()
+{
+  Value = analogRead(A0);
+ Serial.println(Value);
+ delay(1000);
+   if(Value >= 200)
+  {
+      tone(9,1000);
+   	  delay(1000);
+      noTone(9);
+     }
+  else
+  {
+    analogWrite(9,0);
+    
+  }
 }
 
-void loop() {
-int sensorValue = analogRead(A0);
-Serial.println(sensorValue);
-if (sensorValue>200)
-{analogWrite(BUZZER, 50);
-}else
-{analogWrite(BUZZER,0);
-}
-delay(500);
-}
-// BUZZER Pin GND, Pin = 3
+// BUZZER Pin GND, Pin = 9
+// Gas sensor Pin B2=A0;  H1 = 5 v ; A1 and A2 = H1 ; H2 = GND;
+// 1k ohm resistor B1 to GND
