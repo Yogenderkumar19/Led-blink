@@ -1,0 +1,21 @@
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(13, OUTPUT);
+  pinMode(12, INPUT);
+}
+
+void loop()
+{
+  digitalWrite(13,0);
+  delayMicroseconds(2);
+  digitalWrite(13,1);
+  delayMicroseconds(10);
+  digitalWrite(13,0);
+  int du=pulseIn(12,1);
+  int dis=du*0.034/2;
+  Serial.println(dis);
+  
+  
+}
